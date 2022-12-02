@@ -10,7 +10,7 @@ body {
 .books-panel {
     background-color: #fdba74;
     margin: 0 2rem;
-    border: 10px solid #7c2d12;
+    position: relative;
     border-radius: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -61,7 +61,19 @@ body {
     width: 10ch;
 }
 
-.book button:hover {
+.book button:hover, .books-panel svg:hover{
     background-color: #ffedd5;
 }
 
+/* Add New Book Button Styling */
+
+.books-panel svg {
+    width: 32px;
+    height: auto;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    border: 2px solid var(--darkBrown);
+    border-radius: 50%;
+    padding: 10px;
+}
