@@ -1,0 +1,1 @@
+This is an example site that has a list of books, with titles, author names, page length, and if they have been read or not. You can toggle the read status, delete books, and add new books.
