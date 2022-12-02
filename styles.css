@@ -5,23 +5,29 @@
 
 body {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: auto minmax(85vh, 1fr);
     justify-content: center;
     text-align: center;
     background-color: #ffedd5;
+    margin: 0;
+    height: 100vh;
 }
 
 .books-panel {
     background-color: #fdba74;
     margin: 0 2rem;
+    margin-bottom: 2rem;
     position: relative;
     border: 10px solid var(--darkBrown);
     border-radius: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
+    grid-column: 1 / 2;
 }
+
+/* Book Styling */
 
 .book {
     display: grid;
@@ -81,4 +87,41 @@ body {
     border: 2px solid var(--darkBrown);
     border-radius: 50%;
     padding: 10px;
+}
+
+/* New Book Form Styling */
+.new-book-form {
+    background-color: #fdba74;
+    border-left: 10px solid var(--darkBrown);
+    margin-right: 0;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    display: none;
+}
+
+form {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    font-weight: bold;
+    padding: 0 2rem;
+    gap: 4px;
+}
+
+fieldset, form button {
+    grid-column: 1 / 3;
+}
+
+fieldset {
+    border-color: var(--darkBrown);
+}
+
+form button {
+    background-color: #ffedd5;
+    border: 1px solid var(--darkBrown);
+    border-radius: 1rem;
+}
+
+form button:hover {
+    background-color: #fff7ed;
 }

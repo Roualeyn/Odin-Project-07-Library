@@ -13,5 +13,24 @@
     <div class="books-panel" id="books-panel">
         <svg version="1.1" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="m12.5 28v-12.5h-12.5v-3h12.5v-12.5h3v12.5h12.5v3h-12.5v12.5z"/></svg>
     </div>
+    <div class="new-book-form" id="new-book-form">
+        <h2>Add New Book</h2>
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title">
+
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author">
+
+            <label for="pages">Pages:</label>
+            <input type="tel" name="pages" id="pages">
+            <fieldset id="read-unread">
+                <legend>Have you read this book already?</legend>
+                <label><input type="radio" name="read" value="true" id="radio-yes">Yes</label>
+                <label><input type="radio" name="read" value="false">No</label>
+            </fieldset>
+            <button id="add-book-button" type="submit">Add new book</button>
+        </form>
+    </div>
 </body>
 </html>

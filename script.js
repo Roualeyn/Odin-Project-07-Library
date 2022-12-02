@@ -50,19 +50,48 @@ function addBook(book) {
     booksPanel.appendChild(newDiv);
 }
 
+function showForm() {
+    let bookForm = document.getElementById("new-book-form");
+    bookForm.style.display = "block";
+}
 
+function addFormBook(event){
+    event.preventDefault();
+    /* Hide the Form*/
+    let bookForm = document.getElementById("new-book-form");
+    bookForm.style.display = "none";
+    /* Add new book */
+    
+    let readBook = false;
+    if (document.getElementById("radio-yes").checked) {
+        readBook = true;
+    }
+
+    let newBook = new Book(
+        document.getElementById("author").value,
+        document.getElementById("title").value,
+        document.getElementById("pages").value,
+        readBook
+    );  
+    Library.push(newBook);
+    generateBooks();
+    
+    bookForm.reset();
+}
+
+function generateBooks() {
+    document.getElementById("books-panel").innerHTML = `<svg id="addBook" version="1.1" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="m12.5 28v-12.5h-12.5v-3h12.5v-12.5h3v12.5h12.5v3h-12.5v12.5z"/></svg>`;
+    document.getElementById("addBook").addEventListener("click", showForm)
+
+    for (let book of Library) {
+        addBook(book);
+    }
+}
+
+/* Main Code Starts Here */
 
 Library.push(new Book('Bill', "Bill's Kitchen", 150, true));
 Library.push(new Book('J.R.R Tolkien', "Lord of the Rings", 1000, false));
 Library.push(new Book('James Jonathan', "JJ's Ultimate Survival Guide", 5, false));
-
-
-function generateBooks() {
-    document.getElementById("books-panel").innerHTML = "";
-
-    for (let book of Library) {
-        addBook(book);    
-    }
-}
-
+document.getElementById("add-book-button").addEventListener("click", addFormBook, false)
 generateBooks();
