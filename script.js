@@ -89,8 +89,8 @@ function generateBooks() {
 
 /* Main Code Starts Here */
 
-Library.push(new Book('Bill', "Bill's Kitchen", 150, true));
-Library.push(new Book('J.R.R Tolkien', "Lord of the Rings", 1000, false));
-Library.push(new Book('James Jonathan', "JJ's Ultimate Survival Guide", 5, false));
+Library.push(new Book("H. G. Wells", "The War of the Worlds", 287, true));
+Library.push(new Book("Jules Verne", "Around the World in Eighty Days", 237, false));
+Library.push(new Book("The Shadow over Innsmouth", "H.P. Lovecraft", 138, false));
 document.getElementById("form-element").addEventListener("submit", addFormBook, false)
 generateBooks();
