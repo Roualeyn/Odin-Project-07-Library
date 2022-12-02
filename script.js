@@ -56,7 +56,6 @@ function showForm() {
 }
 
 function addFormBook(event){
-    event.preventDefault();
     /* Hide the Form*/
     let bookForm = document.getElementById("new-book-form");
     bookForm.style.display = "none";
@@ -76,7 +75,7 @@ function addFormBook(event){
     Library.push(newBook);
     generateBooks();
     
-    bookForm.reset();
+    document.getElementById("form-element").reset();
 }
 
 function generateBooks() {
@@ -93,5 +92,5 @@ function generateBooks() {
 Library.push(new Book('Bill', "Bill's Kitchen", 150, true));
 Library.push(new Book('J.R.R Tolkien', "Lord of the Rings", 1000, false));
 Library.push(new Book('James Jonathan', "JJ's Ultimate Survival Guide", 5, false));
-document.getElementById("add-book-button").addEventListener("click", addFormBook, false)
+document.getElementById("form-element").addEventListener("submit", addFormBook, false)
 generateBooks();
